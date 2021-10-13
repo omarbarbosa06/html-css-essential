@@ -4,28 +4,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
     <title>HTML-CSS-ESSENTIALS</title>
   </head>
   <body>
     <header>
       <nav>
-      <p>Setup</p>
-        <ol>
-          <li>Google Chrome</li>
-          <li>Visual Studio Code</li>
-          <li>Figma</li>
-          <li>GitHub</li>
-        </ol>
+        <details>
+          <summary>
+            Setup
+          </summary>
+          <ol>
+            <a href="#google-chrome">
+              <li>Google Chrome</li>
+            </a>
+            <a href="#visual-code">
+              <li>Visual Studio Code</li>
+            </a>
+            <a href="#figma">
+              <li>Figma</li>
+            </a>
+            <a href="#github">
+              <li>GitHub</li>
+            </a>
+          </ol>
+        </details>
 
-        <p>Conceptos esenciales del Desarollo Web</p>
-        <ol>
-          <li>Qué es HTML</li>
-          <li>Etiquetas</li>
-          <li>DOM</li>
-          <li>Semántica</li>
-          <li>Atributos</li>
-          <li>Qué es CSS</li>
-        </ol>
+        <details>
+          <summary>
+            Conceptos esenciales del Desarollo Web
+          </summary>
+          <ol>
+            <li>Qué es HTML</li>
+            <li>Etiquetas</li>
+            <li>DOM</li>
+            <li>Semántica</li>
+            <li>Atributos</li>
+            <li>Qué es CSS</li>
+          </ol>
+        </details>
       </nav>
     </header>
     <h1>
@@ -39,7 +56,7 @@
       Setup
     </h2>
     <img src="assets/googlechrome.png" alt="Google Chrome Icon" title="Google Chrome Icon">
-    <h3>
+    <h3 id="google-chrome" >
       Google Chrome
     </h3>
     <p>
@@ -48,7 +65,7 @@
     </p>
 
     <img src="assets/visualstudiocode.png" alt="Visual Studio Code Icon" title="Visual Studio Code Icon">
-    <h3>Visual Studio Code</h3>
+    <h3 id="visual-code">Visual Studio Code</h3>
     <p>
       Visual Studio Code es el editor de texto más popular y potente del mercado actualmente, su fácil uso y la capacidad de
       extenderlo por medio de plugins lo hace el complemento perfecto para cualquier programador sin importar el lenguaje en
@@ -56,14 +73,14 @@
     </p>
 
     <img src="assets/figma.png" alt="Figma Icon" title="Figma Icon">
-    <h3>Figma</h3>
+    <h3 id="figma">Figma</h3>
     <p>
       Figma es una la herramienta más popular en la actualidad para entregar diseños a los desarrolladores para su
       implementación por su fácil uso porque puede ser usado directamente desde el navegador.
     </p>
 
     <img src="assets/github.png" alt="Github Icon" title="Github Icon">
-    <h3>Github</h3>
+    <h3 id="github">Github</h3>
     <p>
       Así como en Facebook te encuentran tus amigos, en Github te encuentran otras programadoras y programadores de todo el
       mundo, en vez de subir fotos de tus viajes aquí subes tu código y puedes elegir hacerlo “open source” o guardarlo de
@@ -78,6 +95,22 @@
       Hyper Text Markup Language o Lenguaje de marcas Hipertexto. Es el componente más básico de la web. Define el significado
       y la estructura del contenido.
     </p>
+    <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+&lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+    </pre>
+
+
 
     <h3>Etiquetas</h3>
     <p>
@@ -146,6 +179,13 @@
       <li>border-block | border-inline | border-block-start | border-block-end | border-inline-start | border-inline-end</li>
       <li>padding-block | padding-inline | padding-block-start | padding-block-end | padding-inline-start | padding-inline-end</li>
     </ul>
+
+    <p>
+      Si tienes alguna pregunta escribeme a
+      <a href="mailto:omarbarbosa06@gmail.com">omarbarbosa06@gmail.com</a>
+    </p>
+
+
 
 
 
