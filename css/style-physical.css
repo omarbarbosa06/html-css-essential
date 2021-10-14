@@ -1,0 +1,170 @@
+@font-face{
+  /* font-family: leonidas; lo que sea */
+  font-family: charter;
+  src: url('../assets/fonts/charter-regular.otf');
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face{
+  /* font-family: leonidas; lo que sea */
+  font-family: charter;
+  src: url('../assets/fonts/charter-italic.otf');
+  font-style: italic;
+  font-weight: 400;
+}
+@font-face{
+  /* font-family: leonidas; lo que sea */
+  font-family: charter;
+  src: url('../assets/fonts/charter-bold.otf');
+  font-style: normal;
+  font-weight: bold;
+}
+@font-face{
+  /* font-family: leonidas; lo que sea */
+  font-family: charter;
+  src: url('../assets/fonts/charter-bold-italic.otf');
+  font-style: italic;
+  font-weight: bold;
+}
+:root{
+  font-size: 16px;
+  --gray30: #212121;
+  --gray20: #212429;
+  --gray10: #616161;
+}
+/*Que todo el body HEREDE*/
+body {
+  color: var(--gray30);
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+
+}
+
+header{
+  font-size: 14px;
+  color: var(--gray10)
+}
+
+/*Las a no heredan color, hay que ponerlos aparte*/
+header a {
+  color: var(--gray10);
+  text-decoration: none;
+}
+
+header a:hover {
+  color: var(--gray30);
+}
+
+nav details summary{
+  font-weight: bold;
+}
+
+h1{
+  font-size: 60px;
+  margin: 64px 0 16px 0; /*comes from figma*/
+
+  /* font-size: 3.75em  60/16 */
+  /* Pixeles son valores absolutos, un pixel va a ser aqui y en
+  china*/
+
+  /* Un valor relativo seria em */
+  /* Para pasar de px a em */
+  /* 60px y 4em seria igual a 240 pixeles (se multiplica)*/
+  /* Si a body le pones font-size 10 px, todo lo va a hererad, pero
+  si dentro de body hay un header, y a header le pones 2em, va a agarrar
+  el valor mas cercano, en este caso lo hererado de body (10px) y
+  se multiplicaria por 2, de los 2em = 20px
+  Si ahora anhidas un li al header, y le pones 2em, el valor
+  de un em es ya 20px que viene del mas cercano, el header
+  entonces serian 20 x 2 = 40px para cada li*/
+
+  /* 50vw view por width, lo que ve el  50% del view port*/
+
+
+  /* 1rem toma el valor mas padre de todo el documento osea el html
+  o el root
+
+  y si pones 3rem, seria 3 veces el valor del padrote*/
+}
+h1 + p{
+  /* background:red; (testing) */
+  /* Solo aplica al hermano directo */
+  /* si fuera ~ aplicaria a todos los p del mismo nivel */
+  margin-bottom: 64px;
+}
+hr{
+  margin: 64px 0;
+}
+
+h2{
+  font-size: 2em; /* El valor de html son 16px entonces toma ese
+  y ya solo multiplicas 16 x 2 - 32 que es lo que pide el proyecto*/
+  margin: 64px 0 40px 0;
+  font-weight: normal;
+}
+
+h3{
+  /* font-size: 24px; */
+  font-size: 1.5em;
+  margin-top: 16px;
+  margin-bottom: 24px;
+  font-weight: normal;
+}
+
+pre{
+  background: #FEC62E;
+}
+blockquote{
+  margin: 32px 0;
+}
+
+.hero{
+  /* background-image: linear-gradient(to top, rgba(255,255,255,.3), red 10px,transparent), url('../assets/pattern.png'); */
+  background-image: linear-gradient(to top, rgba(255,255,255,.3),transparent), url('../assets/pattern.png');
+  /* Se multiplica por defecto, a menos que: */
+  /* background-repeat: no-repeat; */
+  /* background-position: center; */
+  /* background-size: cover; */
+  height: 350px;
+}
+.section-content ol li{
+  line-height: 24px;
+
+}
+.section-content ul li{
+  margin-bottom: 16px;
+
+}
+.section-content + hr{
+  display: none;
+}
+.section-content img{
+  margin-top: 40px;
+}
+.section-content{
+  counter-reset: titleList;
+  margin-top: 164px;
+}
+.section-content:first-of-type{
+  margin: 0;
+}
+.section-content h3 {
+  counter-increment: titleList;
+}
+/* Pseudo elemento */
+.section-content h3::before {
+  /* content: "-"counter(titleList, upper-roman)"-"; */
+  content: counter(titleList, decimal);
+}
+.section-content h3::after {
+  content: '';
+  width: 32px;
+  height: 4px;
+  background: var(--gray30);
+  /* tiene display inline lo que no puede tener height */
+  display: inline-block;
+}
+
+
+
+
