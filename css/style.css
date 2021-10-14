@@ -35,7 +35,7 @@
 /*Que todo el body HEREDE*/
 body {
   color: var(--gray30);
-  font-family: leonidas;
+  font-family: 'Roboto', sans-serif;;
 
 }
 
@@ -92,6 +92,41 @@ h2{
 h3{
   /* font-size: 24px; */
   font-size: 1.5em;
+}
+
+pre{
+  background: #FEC62E;
+}
+
+.hero{
+  /* background-image: linear-gradient(to top, rgba(255,255,255,.3), red 10px,transparent), url('../assets/pattern.png'); */
+  background-image: linear-gradient(to top, rgba(255,255,255,.3),transparent), url('../assets/pattern.png');
+  /* Se multiplica por defecto, a menos que: */
+  /* background-repeat: no-repeat; */
+  /* background-position: center; */
+  /* background-size: cover; */
+  height: 350px;
+}
+.section-content{
+  counter-reset: titleList;
+}
+
+.section-content h3 {
+  counter-increment: titleList;
+}
+
+/* Pseudo elemento */
+.section-content h3::before {
+  /* content: "-"counter(titleList, upper-roman)"-"; */
+  content: counter(titleList, decimal);
+}
+.section-content h3::after {
+  content: '';
+  width: 32px;
+  height: 4px;
+  background: var(--gray30);
+  /* tiene display inline lo que no puede tener height */
+  display: inline-block;
 }
 
 
