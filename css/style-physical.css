@@ -32,6 +32,9 @@
   --gray20: #212429;
   --gray10: #616161;
 }
+html{
+  scroll-behavior: smooth;
+}
 /*Que todo el body HEREDE*/
 body {
   color: var(--gray30);
@@ -42,7 +45,78 @@ body {
 
 header{
   font-size: 14px;
-  color: var(--gray10)
+  width: 188px;
+  color: var(--gray10);
+  position: absolute;
+  top: 64px;
+  /* left: -188px;  */
+  /* pero hay margen entones logico, sacas el margen y le sunmas al -188*/
+  left: -232px;
+  /*
+    con RELATIVE se activan top left bottom right z-index se activa con relative
+     top 50px lo empuja hacia abajo como margin
+     se mueve en toda la pagina sin importar si se pone arriba de cosas o se come
+     no empuja y se enciman entonces viene el z-index
+     y ocupa todo espacio fisico
+     z-index -1(se va pa atras)
+  */
+  /*
+    con ABSOLUTE se ubica donde esta el DOM, osea el div donde este, si
+    tiene una imagen arriba o un header, y luego de header esta el div con absolute
+    se pondra despues del header
+    top right left bottom
+    top 0, lo pone hasta arriba, botton 0 hasta abajo
+    si pones top 0 y bottom 0, se estira dependiendo al view port
+  */
+  /*
+    hacer un absoluto pero que sea relativo a un div
+    al div padre le pones relative y le pones absolute al hijo
+  */
+  /*
+    como absolute
+    fixed te persigue si tu haces scroll, se mantiene
+  */
+  /*
+    sticky como relative, ocupa todo el espacio
+    se arrastra como vas haciendo scroll
+  */
+
+  /*
+      RELATIVE
+      es como static pero te permite hacer el top left right y bottom
+      no empuja ni nada, si pones 10 pixeles para abajo se va a poner sin importar
+      si sobreescribe algo
+      Casi nunca se usa el top left bottom right
+      relativo a su papa
+
+      ABSOLUTE
+      Remueve el div del DOM y actua como si no existiera, lo demas
+      hace render, helpful si queremos pegar algo y no quieres que
+      nada se mueva al rededor
+      Busca un papa que no tenga de position static y a partir de
+      ahi hace render y si le pones top 0 se pondra arriba de ese padre
+      si no hay, se ira hasta arriba de toda la pagina
+      lo mas comun es ponerle relative al papa
+
+      FIXED
+      Similar a absoluto
+      Hacen fixed relacionado con el html, le vale sus parents, se
+      va hasta el html
+      Y se mueve en la pagina si haces scroll
+
+      STICKY
+      Combinacion de relative y fixed
+      Es como relative pero cuando sale del view, se queda fixed
+
+
+
+
+
+
+
+  */
+
+
 }
 
 /*Las a no heredan color, hay que ponerlos aparte*/
@@ -57,11 +131,16 @@ header a:hover {
 
 nav details summary{
   font-weight: bold;
+  line-height: 24px;
+}
+header li{
+  margin-bottom: 16px;
 }
 
 h1{
   font-size: 60px;
   margin: 64px 0 16px 0; /*comes from figma*/
+  font-weight: normal;
 
   /* font-size: 3.75em  60/16 */
   /* Pixeles son valores absolutos, un pixel va a ser aqui y en
@@ -86,12 +165,13 @@ h1{
 
   y si pones 3rem, seria 3 veces el valor del padrote*/
 }
-h1 + p{
-  /* background:red; (testing) */
-  /* Solo aplica al hermano directo */
-  /* si fuera ~ aplicaria a todos los p del mismo nivel */
+/* h1 + p{
+  background:red; (testing)
+  Solo aplica al hermano directo
+  si fuera ~ aplicaria a todos los p del mismo nivel
   margin-bottom: 64px;
-}
+  no se necesita porque ya hay margen natural y margin collapse
+} */
 hr{
   margin: 64px 0;
 }
@@ -99,8 +179,8 @@ hr{
 h2{
   font-size: 2em; /* El valor de html son 16px entonces toma ese
   y ya solo multiplicas 16 x 2 - 32 que es lo que pide el proyecto*/
-  margin: 64px 0 40px 0;
   font-weight: normal;
+  margin: 64px 0 0px 0;
 }
 
 h3{
@@ -109,15 +189,56 @@ h3{
   margin-top: 16px;
   margin-bottom: 24px;
   font-weight: normal;
+  position: sticky;
+  top: 0;
+  background: white;
 }
 
 pre{
   background: #FEC62E;
+  padding: 40px;
+  font-family: 'Roboto';
+  line-height: 24px;
 }
 blockquote{
+  font-size: 24px;
   margin: 32px 0;
+  padding-left: 16px;
+  border-left: 4px solid var(--gray30);
+  line-height: 24px;
 }
+blockquote span{
+  color: var(--gray10);
+}
+blockquote span::before{
+  content: "-";
+}
+.header-content{
+  position: relative;
+}
+.header{
+  position: sticky;
+  top: 0;
+}
+.main{
 
+  /* background:red; */
+  /* background-image: linear-gradient(to top, rgba(255,255,255,.3),transparent), url('../assets/pattern.png'); */
+}
+.wrapper{
+
+  width: 902px;
+  /* wrapper se encarga de dar tamano y centrar */
+  margin: auto;
+
+}
+.main-content{
+
+  /* padding: 20px; */
+  background: white;
+
+
+}
 .hero{
   /* background-image: linear-gradient(to top, rgba(255,255,255,.3), red 10px,transparent), url('../assets/pattern.png'); */
   background-image: linear-gradient(to top, rgba(255,255,255,.3),transparent), url('../assets/pattern.png');
@@ -126,6 +247,7 @@ blockquote{
   /* background-position: center; */
   /* background-size: cover; */
   height: 350px;
+
 }
 .section-content ol li{
   line-height: 24px;
@@ -150,21 +272,25 @@ blockquote{
 }
 .section-content h3 {
   counter-increment: titleList;
+  padding-bottom: 8px;
 }
 /* Pseudo elemento */
 .section-content h3::before {
   /* content: "-"counter(titleList, upper-roman)"-"; */
-  content: counter(titleList, decimal);
+  content: counter(titleList, decimal)". ";
 }
 .section-content h3::after {
   content: '';
-  width: 32px;
+  width: 80px;
   height: 4px;
   background: var(--gray30);
   /* tiene display inline lo que no puede tener height */
   display: inline-block;
-}
+  position: absolute;
+  bottom: 0;
+  left: 0;
 
+}
 
 
 

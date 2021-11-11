@@ -1,0 +1,118 @@
+/* Notas */
+
+/* Aplicar a multiples estilos */
+/* La coma aplica como un "y"*/
+#title, .sub-title{
+  color: red
+}
+/*--------------------------------------------- */
+
+/* Estilos DENTRO DE*/
+/* Todos los div con clase title dentro de body tag */
+body .title{
+  color: red;
+}
+/*--------------------------------------------- */
+
+/* Hijo directo*/
+/*  <body>
+      <h1 class="title">
+      <main>
+        <h2 class="title">
+      </main>
+    </body>
+*/
+body > .title{
+  color: red;
+}
+
+/* Solo afecta ak h1 porque eta en el primer nivel despues de
+body, luego hay un <main> que crea otro nivel y ya no
+afecta al h2 */
+/*--------------------------------------------- */
+
+/* Hermano */
+
+/* Afecta a los h2 que sean hermanos del h1, pero el h1 NO
+toma el estilo*/
+
+h1 ~ h2{
+  color: red;
+}
+
+/*--------------------------------------------- */
+
+/* Adyacente */
+/* Solo afecta al primer h2 que es mas cercano al h1*/
+/*
+    <h1></h1>
+    <h2></h2> este seria afectado
+    <h2></h2> este NO
+*/
+h1 + h2{
+  color: red;
+}
+
+/*--------------------------------------------- */
+
+/* Pseuso selectores */
+h1:hover{
+  color: red;
+}
+
+/* Crean elementos especificos para agregar contenido
+y estos sean leidos en un screen reader*/
+
+h1::after{
+  content:"-"
+}
+h1::before{
+  content:"-"
+}
+
+/*
+  #00 00 00
+  color, representa a red, green y blue con valores de 1 16, y a y f
+
+  rgb(255,255,0)
+  igual representa red, green, blue
+
+  con canal alfa
+  rgba(255,255,255, 0 a 1) 1 opaco, 0 transparente
+
+  nth o first-child es si solo quieres modificar un elemento
+  en especifico!
+
+
+*/
+
+/* Box model */
+
+/* Si defines un width y heigth
+    Esto sera para el content, pero si pones border y padding, se
+    tiene que sumar hacia arriba y hacia abajo lo cual causara
+    que si ponemos width de 100 y heigth de 100, el content tendra
+    100 x 100 pero the actual width and hegiht sera la suma de estos
+    100 mas el padding y border
+
+    Si queremos que todo en total sea 100 x 100 y se calcule solo,
+    ponemos box-sizing: border-box y esto acomodara todo para que
+    en total sea 100 x100
+*/
+
+/* Valores fisicos (manera vieja)*/
+/*
+  ej. text-align: right
+
+*/
+
+
+/* Valores logicos */
+/*
+  ej. text-align: end
+
+*/
+
+/* Si tienes un display block, con un margin auto se centra */
+
+/* Todos tiene static como position por default */

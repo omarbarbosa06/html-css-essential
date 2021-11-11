@@ -1,0 +1,10 @@
+/* Display */
+
+/* BLOCK */
+ /* Ocupa espacio de toda la linea*/
+
+/* INLINE */
+ /* Ocupa espacio fisico en la linea*/
+  /*Si tenemos dos imagenes (las dos por defecto tienen display: inline
+  la imagenes se pondran juntas porque solo ocupa el espaio fisico
+  posible, no toda la linea*/

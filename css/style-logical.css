@@ -28,30 +28,31 @@
 }
 :root{
   font-size: 16px;
-  --gray30: #212121;
-  --gray20: #212429;
-  --gray10: #616161;
+  --white30: white;
+  --white20: #A5A3A5;
+  --white10: #3A3539;
 }
 /*Que todo el body HEREDE*/
 body {
-  color: var(--gray30);
-  font-family: 'Roboto', sans-serif;;
+  color: var(--white30);
+  font-family: 'Nunito', sans-serif;
+  background: #251F24
 
 }
 
 header{
   font-size: 14px;
-  color: var(--gray10)
+  color: var(--white)
 }
 
 /*Las a no heredan color, hay que ponerlos aparte*/
 header a {
-  color: var(--gray10);
+  color: var(--white20);
   text-decoration: none;
 }
 
 header a:hover {
-  color: var(--gray30);
+  color: var(--white30);
 }
 
 nav details summary{
@@ -60,6 +61,7 @@ nav details summary{
 
 h1{
   font-size: 60px;
+  font-weight: normal;
 
   /* font-size: 3.75em  60/16 */
   /* Pixeles son valores absolutos, un pixel va a ser aqui y en
@@ -88,20 +90,25 @@ h1{
 h2{
   font-size: 2em; /* El valor de html son 16px entonces toma ese
   y ya solo multiplicas 16 x 2 - 32 que es lo que pide el proyecto*/
+  font-weight: normal;
 }
 
 h3{
   /* font-size: 24px; */
   font-size: 1.5em;
+  font-weight: normal;
 }
 
 pre{
-  background: #FEC62E;
+  background: var(--white10);
+}
+p{
+  color: var(--white20);
 }
 
 .hero{
   /* background-image: linear-gradient(to top, rgba(255,255,255,.3), red 10px,transparent), url('../assets/pattern.png'); */
-  background-image: linear-gradient(to top, rgba(255,255,255,.3),transparent), url('../assets/pattern.png');
+  background: linear-gradient(96.07deg, #314755 30.63%, #26A0DA 102.18%);
   /* Se multiplica por defecto, a menos que: */
   /* background-repeat: no-repeat; */
   /* background-position: center; */
@@ -125,11 +132,10 @@ pre{
   content: '';
   width: 32px;
   height: 4px;
-  background: var(--gray30);
+  background: var(--white30);
   /* tiene display inline lo que no puede tener height */
   display: inline-block;
 }
-
 
 
 
