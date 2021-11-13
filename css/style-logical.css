@@ -268,3 +268,10 @@ blockquote p{
   }
 
 }
+footer{
+  padding-block-start: 40px;
+  padding-block-end: 40px;
+  background: white;
+  color: black;
+  text-align: center;
+}
