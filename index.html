@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
       rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap"
       rel="stylesheet">
     <title>HTML-CSS-ESSENTIALS</title>
   </head>
@@ -72,7 +72,6 @@
       </div>
     </div>
     <main class="main">
-
       <div class="wrapper">
         <div class="main-content">
           <h1>
@@ -145,18 +144,18 @@
               y la estructura del contenido.
             </p>
             <pre>
-                    &lt;!DOCTYPE html&gt;
-                    &lt;html lang=&quot;en&quot;&gt;
-                    &lt;head&gt;
-                    &lt;meta charset=&quot;UTF-8&quot;&gt;
-                    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-                    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-                    &lt;title&gt;Document&lt;/title&gt;
-                    &lt;/head&gt;
-                    &lt;body&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+&lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
 
-                    &lt;/body&gt;
-                    &lt;/html&gt;
+&lt;/body&gt;
+&lt;/html&gt;
                             </pre>
             <h3 id="etiquetas">Etiquetas</h3>
             <p>
@@ -243,10 +242,47 @@
                 padding-inline-end</li>
             </ul>
           </section>
+          <div class="section-content">
+            <h2>Video slider CSS</h2>
+            <div class="slider">
+              <scroll-container class="slider-container">
+                <scroll-page class="slider-slide" id="video-1">
+                  <iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/g2nMKzhkvxw" title="YouTube video player"
+                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                </scroll-page>
+                <scroll-page class="slider-slide" id="video-2">
+                  <iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/azcrPFhaY9k" title="YouTube video player"
+                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                </scroll-page>
+                <scroll-page class="slider-slide" id="video-3">
+                  <iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/EgpKu1tAVMY" title="YouTube video player"
+                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                </scroll-page>
+
+              </scroll-container>
+              <div class="slider-bullet-list">
+                <a href="#video-1" class="slider-bullet"></a>
+                <a href="#video-2" class="slider-bullet"></a>
+                <a href="#video-3" class="slider-bullet"></a>
+              </div>
+            </div>
+          </div>
           <p>
             Si tienes alguna pregunta escribeme a
             <a href="mailto:omarbarbosa06@gmail.com">omarbarbosa06@gmail.com</a>
           </p>
+
+          <div class="section-content">
+            <form action="#" class="form">
+              <h2>Ingresa a nuestro newsletter</h2>
+              <input type="text" required placeholder="Name">
+              <input type="email" required placeholder="Email">
+              <input type="submit" value="Suscribe">
+            </form>
+          </div>
         </div>
       </div>
     </main>

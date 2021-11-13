@@ -26,23 +26,41 @@
   font-style: italic;
   font-weight: bold;
 }
+
 :root{
   font-size: 16px;
   --white30: white;
   --white20: #A5A3A5;
   --white10: #3A3539;
 }
+html{
+  scroll-behavior: smooth;
+
+}
 /*Que todo el body HEREDE*/
 body {
   color: var(--white30);
   font-family: 'Nunito', sans-serif;
-  background: #251F24
+  background: #251F24;
+  margin:0;
+}
+.header{
 
 }
+.header-content{
+  padding-inline:20px;
 
+}
 header{
+  margin-block-start: 20px;
   font-size: 14px;
-  color: var(--white)
+  color: var(--white);
+  /* inset-block-start  */
+}
+
+header li{
+  color: var(--white20);
+  margin-block-end: 16px;
 }
 
 /*Las a no heredan color, hay que ponerlos aparte*/
@@ -60,47 +78,42 @@ nav details summary{
 }
 
 h1{
-  font-size: 60px;
-  font-weight: normal;
-
-  /* font-size: 3.75em  60/16 */
-  /* Pixeles son valores absolutos, un pixel va a ser aqui y en
-  china*/
-
-  /* Un valor relativo seria em */
-  /* Para pasar de px a em */
-  /* 60px y 4em seria igual a 240 pixeles (se multiplica)*/
-  /* Si a body le pones font-size 10 px, todo lo va a hererad, pero
-  si dentro de body hay un header, y a header le pones 2em, va a agarrar
-  el valor mas cercano, en este caso lo hererado de body (10px) y
-  se multiplicaria por 2, de los 2em = 20px
-  Si ahora anhidas un li al header, y le pones 2em, el valor
-  de un em es ya 20px que viene del mas cercano, el header
-  entonces serian 20 x 2 = 40px para cada li*/
-
-  /* 50vw view por width, lo que ve el  50% del view port*/
-
-
-  /* 1rem toma el valor mas padre de todo el documento osea el html
-  o el root
-
-  y si pones 3rem, seria 3 veces el valor del padrote*/
+  font-size: 40px;
+  font-weight: bold;
+  margin-block-start: 20px;
+  margin-block-end: 16px;
 }
 
 h2{
   font-size: 2em; /* El valor de html son 16px entonces toma ese
   y ya solo multiplicas 16 x 2 - 32 que es lo que pide el proyecto*/
   font-weight: normal;
+  margin-block:40px;
 }
 
 h3{
   /* font-size: 24px; */
   font-size: 1.5em;
-  font-weight: normal;
+  font-weight: 600;
+  margin-block: 16px;
+  position: sticky;
+  inset-block-start: 0;
+  background: #251F24;
+}
+hr{
+  margin-block: 40px;
+  border-color: rgba(97,97,97,0.2);
 }
 
 pre{
   background: var(--white10);
+  padding: 40px;
+  overflow: auto;
+  border-radius: 8px;
+
+  border: 10px solid #5551FF;
+  box-shadow: -10px 10px 0 0 #ABAAF6;
+  margin-block-end: 30px;
 }
 p{
   color: var(--white20);
@@ -113,7 +126,13 @@ p{
   /* background-repeat: no-repeat; */
   /* background-position: center; */
   /* background-size: cover; */
-  height: 350px;
+block-size: 50px;
+}
+.section-content img{
+  margin-block-start: 40px;
+  display: block;
+  /* deben ser block para que haga margin collapsing */
+  max-inline-size: 100%;
 }
 .section-content{
   counter-reset: titleList;
@@ -126,16 +145,126 @@ p{
 /* Pseudo elemento */
 .section-content h3::before {
   /* content: "-"counter(titleList, upper-roman)"-"; */
-  content: counter(titleList, decimal);
+  content: counter(titleList, decimal)'. ';
 }
-.section-content h3::after {
-  content: '';
-  width: 32px;
-  height: 4px;
-  background: var(--white30);
-  /* tiene display inline lo que no puede tener height */
+
+
+blockquote{
+  margin-block-start: 80px;
+  margin-block-end: 63px;
+  background: var(--white10);
+  border-radius: 8px;
+  padding: 24px;
+  line-height: 32px;
+  font-size: 24px;
+
+
+
+
+}
+blockquote p{
+  color: var(--white30);
+}
+.main hr {
+  display: none;
+}
+
+.main{
+
+}
+.wrapper{
+
+  max-inline-size: 902px;
+  /* max es 902 o menos, si pones una fija va a generar un scroll cuando se haga resize porque sera fijo y max actua como responsive */
+
+  margin: auto;
+}
+
+.main-content{
+  padding-inline: 16px;
+
+}
+
+.slider{
+
+}
+
+.slider-container{
+  /* block-size: 100px; */
+  display: block;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  white-space: nowrap;
+  font-size: 0;
+
+}
+
+.video{
+  margin: 0;
   display: inline-block;
+  inline-size: 100%;
+  block-size: 100%;
+  aspect-ratio: 16/9;
 }
 
+.slider-bullet-list{
+  text-align: center;
+  margin-block-start: 15px;
 
+}
 
+.slider-bullet{
+  display: inline-block;
+  inline-size: 15px;
+  block-size: 15px;
+  background: white;
+  border-radius: 50%;
+}
+
+.form input{
+  inline-size: 100%;
+  box-sizing: border-box;
+  border: 1px solid var(--white30);
+  background: #251F24;
+  border-radius: 8px;
+  padding-inline: 16px;
+  padding-block: 12px;
+  color: var(--white30);
+  font-size: 1rem;
+  display: block;
+  margin-block-end: 24px ;
+}
+
+.form input[type="submit"]{
+  background: #157EFB;
+  border: none;
+}
+.form input::-webkit-input-placeholder{
+  color: var(--white30);
+}
+
+@media screen and (min-width: 1366px){
+  .hero{
+    block-size: 350px;
+
+  }
+  .header{
+    position: sticky;
+    inset-block-start: 0;
+  }
+  .header-content{
+    position: relative;
+    padding-inline: 0;
+  }
+  header{
+    position: absolute;
+    inset-block-start: 65px;
+    inset-inline-start: -208px;
+    inline-size: 188px;
+  }
+  h1{
+    margin-block-start: 64px;
+    font-size: 64px;
+  }
+
+}
